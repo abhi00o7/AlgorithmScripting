@@ -25,3 +25,15 @@ function spinalCase(str) {
 
 console.log(spinalCase('The_Andy_Griffith_Show'))
 
+
+// solution 2 
+
+function anotherSpinalCase(str) {
+    // "It's such a fine line between stupid, and clever."
+    // --David St. Hubbins
+  
+    return str
+      .split(/\s|_|(?=[A-Z])/)
+      .join("-")
+      .toLowerCase();
+  }
