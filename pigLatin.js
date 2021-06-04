@@ -13,7 +13,7 @@ function pigLatin(str) {
         .replace(/(^[^aeiou]+)(\w*)/, "$2$1ay");
 }
 
-
+// $&	Substitutes a copy of the whole match.	\$?\d*\.?\d+	**$&**	"$1.30"	"**$1.30**"
 console.log(pigLatin('pig'))
 
 // regEx test samples
