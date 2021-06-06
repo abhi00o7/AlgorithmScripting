@@ -25,3 +25,8 @@ console.log(uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])) //expected 
 // Passed
 // uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]) should return [1, 2, 3, 5, 4, 6, 7, 8].
 
+// another solution for es6 using the 'Set' to find unique values 
+
+function anotherUniteUnique(...arr) {
+    return [...new Set(arr.flat())]
+  }
