@@ -17,6 +17,7 @@
  *       return all i such that A[i] is true.
  */
 
+// code contains optimization as mentioned in this article >> https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Segmented_sieve
 function sumPrimes(num) {
 
     let primeArr = Array.from({
