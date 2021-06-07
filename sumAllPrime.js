@@ -25,7 +25,7 @@ function sumPrimes(num) {
 
     primeArr[1] = false  //one is not prime and its index will change the sum unlike 0
 
-    for (let index = 2; index <= Math.round(Math.sqrt(num)); index++) {
+    for (let index = 2; index <= Math.sqrt(num); index++) {
         if (primeArr[index]) {
             for (let j_index = index ** 2; j_index <= num; j_index += index) {
                 primeArr[j_index] = false
