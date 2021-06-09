@@ -6,7 +6,12 @@ function dropElements(arr, func, state = false) {
     return arr
             .filter(item => func(item)? state = true : state)
   }
-   
+  //code explanation
+/**
+ * using filter function will remove every element which does not satisfy the condition provided with the input
+ * BUT this counters the problem statement which says one the condition is terminated for the particular array ::
+ * ::the array should pe printed as it is.
+ * I achieved this by passing a false condition and using ternary operator. */ 
 
   console.log(dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;}))
 
