@@ -4,7 +4,6 @@
 // The first line of input contains an integer n, (1 ≤ n ≤ 10⁹). This number doesn't contain leading zeros.
 
 function magicNumberCheck(number) {
-    // return ((number % 1000 !== 144) || (number % 100 !== 14) || (number % 10 !== 1)) ? 'YES' : 'NO';
     return number
                 .toString()
                 .replace(/144|14|1/gm , '')
