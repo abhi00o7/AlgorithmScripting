@@ -8,9 +8,8 @@ function magicNumberCheck(number) {
                 .toString()
                 .replace(/144|14|1/gm , '')
                 .length == 0 ? 'YES' : 'NO'
-
-
 }
+
 console.log(magicNumberCheck(141414)) // expected output : 'YES'
 console.log(magicNumberCheck(1411)) // expected output : 'YES'
 console.log(magicNumberCheck(1444)) // expected output : 'NO'
