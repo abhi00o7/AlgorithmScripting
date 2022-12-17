@@ -7,17 +7,15 @@
 // For example, for the input GCG, return [["G", "C"], ["C","G"], ["G", "C"]]
 
 function pairElement(str) {
-    let pairs = {
-        'A': 'T',
-        'T': 'A',
-        'G': 'C',
-        'C': 'G'
-    }
-    return str
-        .split('')
-        .map((element) => [element, pairs[element]])
+  let pairs = {
+    A: "T",
+    T: "A",
+    G: "C",
+    C: "G",
+  };
+  return str.split("").map((element) => [element, pairs[element]]);
 }
 
 //  console.log(pairElement("GCG")) //[ [ 'G', 'C' ], [ 'C', 'G' ], [ 'G', 'C' ] ]
 
-console.log(pairElement("CTCTA"))
+console.log(pairElement("CTCTA"));

@@ -9,17 +9,18 @@
 // Note: Preserve the case of the first character in the original word when you are replacing it. For example if you mean to replace the word Book with the word dog, it //should be replaced as Dog
 
 function myReplace(str, before, after) {
+  if (before[0] === before[0].toUpperCase()) {
+    after = after.replace(after[0], after[0].toUpperCase());
 
-    if (before[0] === before[0].toUpperCase()) {
-      after = after.replace(after[0], after[0].toUpperCase());
-  
-      return str.replace(before, after)
-    }
-  
-    return str.replace(before, after.toLowerCase());
+    return str.replace(before, after);
   }
-  
-  console.log(myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"))
+
+  return str.replace(before, after.toLowerCase());
+}
+
+console.log(
+  myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped")
+);
 
 //   Tests
 // myReplace("Let us go to the store", "store", "mall") //should return the string Let us go to the mall.

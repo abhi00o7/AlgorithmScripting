@@ -8,39 +8,45 @@
 
 // The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418 km3s-2.
 
-
 function orbitalPeriod(arr) {
-    const GM = 398600.4418;
-    const earthRadius = 6367.4447;
+  const GM = 398600.4418;
+  const earthRadius = 6367.4447;
 
-    return arr.map(({
-        name,
-        avgAlt
-    }) => {
-        const orbitalPeriod = Math.round(Math.sqrt(((4 * Math.PI ** 2) * ((earthRadius + avgAlt) ** 3)) / GM));
-        return {
-            name,
-            orbitalPeriod
-        };
-    });
+  return arr.map(({ name, avgAlt }) => {
+    const orbitalPeriod = Math.round(
+      Math.sqrt((4 * Math.PI ** 2 * (earthRadius + avgAlt) ** 3) / GM)
+    );
+    return {
+      name,
+      orbitalPeriod,
+    };
+  });
 }
 
-orbitalPeriod([{
+orbitalPeriod([
+  {
     name: "sputnik",
-    avgAlt: 35873.5553
-}])
+    avgAlt: 35873.5553,
+  },
+]);
 
-console.log(orbitalPeriod([{
-    name: "iss",
-    avgAlt: 413.6
-}, {
-    name: "hubble",
-    avgAlt: 556.7
-}, {
-    name: "moon",
-    avgAlt: 378632.553
-}]))
-//should return 
+console.log(
+  orbitalPeriod([
+    {
+      name: "iss",
+      avgAlt: 413.6,
+    },
+    {
+      name: "hubble",
+      avgAlt: 556.7,
+    },
+    {
+      name: "moon",
+      avgAlt: 378632.553,
+    },
+  ])
+);
+//should return
 /*
 [
   { name: 'iss', orbitalPeriod: 5557 },

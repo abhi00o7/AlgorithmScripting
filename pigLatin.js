@@ -5,16 +5,16 @@
 // - If a word begins with a vowel, just add way at the end.
 
 function pigLatin(str) {
-    // “Like all magnificent things, it's very simple.”
-    // ― Natalie Babbitt, Tuck Everlasting
+  // “Like all magnificent things, it's very simple.”
+  // ― Natalie Babbitt, Tuck Everlasting
 
-    return str
-        .replace(/^[aeiou]\w*/, "$&way")
-        .replace(/(^[^aeiou]+)(\w*)/, "$2$1ay");
+  return str
+    .replace(/^[aeiou]\w*/, "$&way")
+    .replace(/(^[^aeiou]+)(\w*)/, "$2$1ay");
 }
 
 // $&	Substitutes a copy of the whole match.	\$?\d*\.?\d+	**$&**	"$1.30"	"**$1.30**"
-console.log(pigLatin('pig'))
+console.log(pigLatin("pig"));
 
 // regEx test samples
 

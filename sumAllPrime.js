@@ -19,36 +19,34 @@
 
 // code contains optimization as mentioned in this article >> https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Segmented_sieve
 function sumPrimes(num) {
+  let primeArr = Array.from(
+    {
+      length: num + 1,
+    },
+    (item) => true
+  );
 
-    let primeArr = Array.from({
-        length: num + 1
-    }, item => true)
+  primeArr[1] = false; //one is not prime and its index will change the sum unlike 0
 
-    primeArr[1] = false  //one is not prime and its index will change the sum unlike 0
-
-    for (let index = 2; index <= Math.sqrt(num); index++) {
-        if (primeArr[index]) {
-            for (let j_index = index ** 2; j_index <= num; j_index += index) {
-                primeArr[j_index] = false
-            }
-        }
+  for (let index = 2; index <= Math.sqrt(num); index++) {
+    if (primeArr[index]) {
+      for (let j_index = index ** 2; j_index <= num; j_index += index) {
+        primeArr[j_index] = false;
+      }
     }
+  }
 
-
-    return primeArr
-        .reduce(
-            (sum, prime, index) => prime ? sum + index : sum, 0
-        )
+  return primeArr.reduce((sum, prime, index) => (prime ? sum + index : sum), 0);
 }
 
 // Testing and debugging
 
-console.log(sumPrimes(177))
-console.log(sumPrimes(277))
-console.log(sumPrimes(377))
-console.log(sumPrimes(477))
-console.log(sumPrimes(577))
-console.log(sumPrimes(677))
-console.log(sumPrimes(977))
+console.log(sumPrimes(177));
+console.log(sumPrimes(277));
+console.log(sumPrimes(377));
+console.log(sumPrimes(477));
+console.log(sumPrimes(577));
+console.log(sumPrimes(677));
+console.log(sumPrimes(977));
 
-console.log(Math.round(Math.sqrt(277)))
+console.log(Math.round(Math.sqrt(277)));
