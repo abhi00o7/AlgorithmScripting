@@ -12,19 +12,31 @@
 const input = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 const output = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-function ROT13(inputString) {
+function rot13(inputString) {
   let inputStringArr = inputString.split("");
   const inputArr = input.split("");
   const outputArr = output.split("");
 
-  inputString.split('')
-    .map((element, index) => {
-      if (inputArr.includes(element)) {
-        inputStringArr[index] = outputArr[input.indexOf(element)];
-      }
-    })
+  inputString.split("").map((element, index) => {
+    if (inputArr.includes(element)) {
+      inputStringArr[index] = outputArr[input.indexOf(element)];
+    }
+  });
 
-  return inputStringArr.join('');
+  return inputStringArr.join("");
 }
 
-console.log(ROT13("the"));
+// same thing but using .replace() func
+
+function rot13usingReplace(inputString) {
+  return inputString.replace(/[a-z]/gi, function (match) {
+    // String.fromCharCode() method returns a string created from the specified sequence of UTF-16 code units.
+    return String.fromCharCode(
+      match.charCodeAt(0) + (match.toLowerCase() < "n" ? 13 : -13)
+    );
+  });
+}
+
+console.log(rot13usingReplace("guvf vf fcnegn"));
+console.log(rot13usingReplace("EBG13 rknzcyr"));
+console.log(rot13usingReplace("This is my first ROT13 excercise!"));
