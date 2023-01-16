@@ -24,11 +24,12 @@ sd(77455754)=> 4949162525492516
 sd(99999999)=> 8181818181818181
  */
 
-const sd = (x) =>
-  +x
-    .toString()
-    .split("")
-    .map((n) => n * n)
-    .join("");
+// write the sd function in 36 characters or less remove whitespace
+
+// 35 characters
+sd=x=>+[...x+""].map(n=>n*n).join``
+
+// 33 characters
+s=n=>+`${n}`.replace(/./g,x=>x*x)
 
 console.log(sd(64));
