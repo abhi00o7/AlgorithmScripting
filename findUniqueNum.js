@@ -18,5 +18,10 @@ function findUniqueNum(arr) {
     }
     return uniqueNum;
 }
+
+// alternative solution
+function findUniqueNum(arr) {
+  return arr.find(n => arr.indexOf(n) === arr.lastIndexOf(n));
+}
   
 console.log(findUniqueNum([ 1, 1, 1, 2, 1, 1 ]));
