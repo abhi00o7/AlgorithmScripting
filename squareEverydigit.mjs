@@ -26,6 +26,6 @@ sd(99999999)=> 8181818181818181
 
 // const sd = (x) => +x.toString().split('').map((n) => n * n).join('');
 
-const sd = x => x.split('').map(n => n * n).join('') * 1;
+const sd=x=>+[...''+x].map(n=>n*n).join``;
 
-console.log(sd(64));
+console.log(sd(64)); //3616

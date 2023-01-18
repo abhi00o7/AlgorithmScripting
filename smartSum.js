@@ -18,3 +18,13 @@ const anotherSmartSum = (...args) => {
   return sum;
 };
 
+//another solution
+const smartSum = (...args) => {
+  return args.reduce((acc, val) => {
+    if (Array.isArray(val)) {
+      return acc + smartSum(...val);
+    } else {
+      return acc + val;
+    }
+  }, 0);
+};
