@@ -24,6 +24,8 @@ sd(77455754)=> 4949162525492516
 sd(99999999)=> 8181818181818181
  */
 
-const sd = (x) => +x.toString().split('').map((n) => n * n).join('');
+// const sd = (x) => +x.toString().split('').map((n) => n * n).join('');
+
+const sd = x => x.split('').map(n => n * n).join('') * 1;
 
 console.log(sd(64));
