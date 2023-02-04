@@ -30,3 +30,20 @@ function isAnagram(str1, str2){
 
 console.log(isAnagram(`cinema`, `iceman`))
 console.log(isAnagram(`azz`, `zza`))
+
+// refactor using just one object
+
+function checkAnagram(str1, str2) {
+  // check the length 
+  if (str1.length !== str2.length) return false
+
+  // frequency of letters in string
+  const frequencyStr1 = str1.split('').reduce(frequency, 0);
+  const arrayStr2 = str2.split('')
+
+  for (const letter of arrayStr2) {
+    if (!frequencyStr1[letter]) return false;
+    frequencyStr1[letter] -= 1
+  }
+  return true
+}
