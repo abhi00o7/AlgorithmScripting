@@ -30,6 +30,8 @@ function isAnagram(str1, str2){
 
 console.log(isAnagram(`cinema`, `iceman`))
 console.log(isAnagram(`azz`, `zza`))
+console.log(isAnagram(`azz`, `zzdda`))
+console.log(isAnagram(`azz`, `zzsssa`))
 
 // refactor using just one object
 
