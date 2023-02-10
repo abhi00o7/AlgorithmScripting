@@ -59,7 +59,7 @@ const t3 = performance.now();
 console.log(`Call to doSomething took ${t3 - t2} milliseconds.`);
 
 
-// check anagram without using map
+// check anagram without using reduce
 
 function checkAnagramV3(str1, str2) {
   let newStr1 = str1.toLowerCase().replace(/[^a-z]/g, '')
