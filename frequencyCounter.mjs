@@ -32,4 +32,5 @@ function checkSame(arr1, arr2) {
 
 console.log(checkSame([1, 2, 2, 4, 2, 3], [4, 16, 4, 1, 4, 10]))
 console.log(checkSame([1, 2, 2, 4, 2, 3], [4, 16, 4, 10]))
-console.log(checkSame([1, 2, 2, 4], [4, 16, 4, 1, 4, 10]))
+console.log(checkSame([1, 2, 2, 4
+], [4, 16, 4, 1, 4, 10]))

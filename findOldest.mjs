@@ -20,3 +20,4 @@ console.log(findOldestPerson([{
   name: 'lucy',
   age: 289
 }, ]))
+
