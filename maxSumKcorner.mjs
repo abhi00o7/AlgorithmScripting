@@ -5,4 +5,3 @@
  * A corner element is an element from the start of the array or 
  * from the end of the array.
  */
-
