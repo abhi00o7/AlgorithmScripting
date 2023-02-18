@@ -8,19 +8,32 @@
 // the following algorithm works perfectly well for upto two arrays.
 
 function sym(...args) {
-  let oneArray = []
-  for (const arg of args) {
-    oneArray = oneArray.concat([...new Set(arg)])
-  }
+  if (args.length < 1) return `Please provide arguments`
 
-  return oneArray.filter((element, index, array) => {
-    return  array.indexOf(element) === array.lastIndexOf(element)
-  });
+  let firstItem = args.shift()
+  let secondItem = args.shift()
+
+  let intersection = [
+    ...new Set(firstItem), ...new Set(secondItem)
+  ].filter(
+    (element, index, array) => array.indexOf(element) === array.lastIndexOf(element)
+  );
+  args = [intersection, ...args]
+  return args.length > 1 ?
+    sym(...args) :
+    args
 }
+// test cases
+// console.log(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]))
+// console.log(sym([1, 2, 3, 3], [5, 2, 1, 4]))
+// console.log(sym([1, 2, 5], [2, 3, 5],))
+// console.log(sym([1, 2, 5]))
+// console.log(sym([1, 3], [3, 4, 5]))
+// console.log(sym())
 
-
+// performance test cases
 const t0 = performance.now();
-console.log(sym([1, 2, 3], [5, 2, 1, 4]))
+console.log(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]))
 const t1 = performance.now();
 console.log(`Call to doSomething took ${t1 - t0} milliseconds.`);
 
