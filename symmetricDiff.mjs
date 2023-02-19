@@ -21,17 +21,31 @@ function sym(...args) {
   args = [intersection, ...args]
   return args.length > 1 ?
     sym(...args) :
-    args
+    args[0]
 }
+
+// alternative solution
+
+const diff = (arr1, arr2) => [
+  ...arr1.filter((e) => !arr2.includes(e)),
+  ...arr2.filter((e) => !arr1.includes(e))
+];
+
+const anotherSym = (...args) => [...new Set(args.reduce(diff, []))];
+
+// test here
+sym([1, 2, 3], [5, 2, 1, 4]);
+
 // test cases
-// console.log(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]))
-// console.log(sym([1, 2, 3, 3], [5, 2, 1, 4]))
-// console.log(sym([1, 2, 5], [2, 3, 5],))
-// console.log(sym([1, 2, 5]))
-// console.log(sym([1, 3], [3, 4, 5]))
-// console.log(sym())
+console.log(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]))
+console.log(sym([1, 2, 3, 3], [5, 2, 1, 4]))
+console.log(sym([1, 2, 5], [2, 3, 5], ))
+console.log(sym([1, 2, 5]))
+console.log(sym([1, 3], [3, 4, 5]))
+console.log(sym())
 
 // performance test cases
+
 const t0 = performance.now();
 console.log(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]))
 const t1 = performance.now();
@@ -40,4 +54,9 @@ console.log(`Call to doSomething took ${t1 - t0} milliseconds.`);
 const t2 = performance.now();
 console.log(sym([1, 2, 3, 3], [5, 2, 1, 4]))
 const t3 = performance.now();
-console.log(`Call to doSomething took ${t1 - t0} milliseconds.`);
+console.log(`Call to doSomething took ${t3 - t2} milliseconds.`);
+
+const t4 = performance.now();
+console.log(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1]))
+const t5 = performance.now();
+console.log(`Call to doSomething took ${t5 - t4} milliseconds.`);
