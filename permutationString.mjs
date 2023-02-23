@@ -8,6 +8,7 @@
  permutations(aab, aab, aba, aba, baa, baa), 
  but only 2 of them(aba and aba) don 't have the same letter (in this case a) repeating.
  */
+
 function permAlone(str) {
   // Create a regex to match repeated consecutive characters.
   let regex = /(.)\1+/;
