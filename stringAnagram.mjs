@@ -31,10 +31,26 @@ function isAnagram(str1, str2) {
   return true
 }
 
-const t0 = performance.now();
-console.log(isAnagram(twoStr, oneStr))
-const t1 = performance.now();
-console.log(`Call to doSomething took ${t1 - t0} milliseconds.`);
+// higher order function
+function performanceTimer(func) {
+  return function (...args) {
+    const t0 = performance.now();
+    const results = func.apply(null, args)
+    const t1 = performance.now();
+    console.log(`Function Call took ${t1 - t0} milliseconds.`);
+    return results
+  }
+}
+
+const wrapped = performanceTimer(isAnagram);
+
+console.log(wrapped(twoStr, oneStr))
+console.log(`==================`)
+
+// const t0 = performance.now();
+// console.log(isAnagram(twoStr, oneStr))
+// const t1 = performance.now();
+// console.log(`Call to doSomething took ${t1 - t0} milliseconds.`);
 
 
 // refactor using just one object
@@ -53,10 +69,15 @@ function checkAnagram(str1, str2) {
   return true
 }
 
-const t2 = performance.now();
-console.log(checkAnagram(twoStr, oneStr))
-const t3 = performance.now();
-console.log(`Call to doSomething took ${t3 - t2} milliseconds.`);
+const anotherWrap = performanceTimer(checkAnagram);
+
+console.log(anotherWrap(twoStr, oneStr))
+console.log(`==================`)
+
+// const t2 = performance.now();
+// console.log(checkAnagram(twoStr, oneStr))
+// const t3 = performance.now();
+// console.log(`Call to doSomething took ${t3 - t2} milliseconds.`);
 
 
 // check anagram without using reduce
@@ -95,7 +116,10 @@ function checkAnagramV3(str1, str2) {
   return true
 }
 
-const t4 = performance.now();
-console.log(checkAnagramV3(twoStr, oneStr))
-const t5 = performance.now();
-console.log(`Call to doSomething took ${t5 - t4} milliseconds.`);
+const wrappedV3 = performanceTimer(checkAnagramV3)
+console.log(wrappedV3(twoStr, oneStr))
+
+// const t4 = performance.now();
+// console.log(checkAnagramV3(twoStr, oneStr))
+// const t5 = performance.now();
+// console.log(`Call to doSomething took ${t5 - t4} milliseconds.`);
