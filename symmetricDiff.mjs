@@ -49,11 +49,12 @@ const anotherSym = (...args) => [...new Set(args.reduce(diff, []))];
 // higherOrder functions
 // higher order function
 function performanceTimer(func) {
+  let count = 0 
   return function (...args) {
     const t0 = performance.now();
     const results = func.apply(null, args)
     const t1 = performance.now();
-    console.log(`Function Call took ${t1 - t0} milliseconds.`);
+    console.log(`Function Call took ${t1 - t0} milliseconds. COUNT:${++count}`);
     return results
   }
 }
@@ -71,8 +72,8 @@ console.log(firstFuncTimer())
 
 console.log(secondFuncTimer([1, 2, 5], [2, 3, 5], [3, 4, 5]))
 console.log(secondFuncTimer([1, 2, 3, 3], [5, 2, 1, 4]))
-// console.log(secondFuncTimer([1, 2, 5], [2, 3, 5], ))
-console.log(secondFuncTimer([1, 2, 5]))
+console.log(secondFuncTimer([1, 2, 5], [2, 3, 5], ))
+// console.log(secondFuncTimer([1, 2, 5]))
 console.log(secondFuncTimer([1, 3], [3, 4, 5]))
 // console.log(secondFuncTimer())
 
