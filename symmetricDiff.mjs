@@ -26,7 +26,7 @@ function sym(...args) {
 
 // alternative solution
 
-const diff = (arr1, arr2) => [
+const diff = (arr1 = [], arr2 = []) => [
   ...arr1.filter((e) => !arr2.includes(e)),
   ...arr2.filter((e) => !arr1.includes(e))
 ];
@@ -49,7 +49,7 @@ const anotherSym = (...args) => [...new Set(args.reduce(diff, []))];
 // higherOrder functions
 // higher order function
 function performanceTimer(func) {
-  let count = 0 
+  let count = 0
   return function (...args) {
     const t0 = performance.now();
     const results = func.apply(null, args)
@@ -73,7 +73,7 @@ console.log(firstFuncTimer())
 console.log(secondFuncTimer([1, 2, 5], [2, 3, 5], [3, 4, 5]))
 console.log(secondFuncTimer([1, 2, 3, 3], [5, 2, 1, 4]))
 console.log(secondFuncTimer([1, 2, 5], [2, 3, 5], ))
-// console.log(secondFuncTimer([1, 2, 5]))
+console.log(secondFuncTimer([1, 2, 5]))
 console.log(secondFuncTimer([1, 3], [3, 4, 5]))
 // console.log(secondFuncTimer())
 
