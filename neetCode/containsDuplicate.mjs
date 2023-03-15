@@ -35,12 +35,12 @@ const timerV4 = performanceTimer(containsDuplicateV4);
 
 console.log(timerV2([1, 2, 3, 4, 5, 6])); //false
 console.log(timerV2([1, 1, 1, 3, 3, 4, 3, 2, 4, 2])); //true
-console.log(timerV2()); //true
+console.log(timerV2()); // false
 
 console.log(timerV3([1, 2, 3, 4, 5, 6])); //false
 console.log(timerV3([1, 1, 1, 3, 3, 4, 3, 2, 4, 2])); //true
-console.log(timerV3());
+console.log(timerV3()); //false
 //true
 console.log(timerV4([1, 2, 3, 4, 5, 6])); //false
 console.log(timerV4([1, 1, 1, 3, 3, 4, 3, 2, 4, 2])); //true
-console.log(timerV4()); //true
+console.log(timerV4()); //false
