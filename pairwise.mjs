@@ -14,3 +14,21 @@
  9 + 11 = 20→ Indices 1 + 2 = 3
  3 + 3 = 6→ Return 6
  */
+
+//  code for above problem
+function pairwise(arr, arg) {
+  let sum = 0;
+  let used = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] + arr[j] === arg && !used.includes(i) && !used.includes(j)) {
+        sum += i + j;
+        used.push(i, j);
+      }
+    }
+  }
+  return sum;
+}
+
+// TEST CASES
+console.log(pairwise([1, 4, 2, 3, 0, 5], 7)); // 11

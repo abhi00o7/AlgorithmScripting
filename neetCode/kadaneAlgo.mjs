@@ -24,12 +24,7 @@ function kadaneAlgo(arr) {
   }
 
   return maxSoFar;
-// First we create a new instance of the class
-// We pass the name of the class to the constructor
-// The name of the class is passed as a string
-// The class name is passed as a string because the class does not exist yet
-// The class is declared in the same file as the code that creates the instance
-  // The class is declaredS
+
 }
 
 // TEST CASES 
