@@ -41,3 +41,16 @@ const pascalsTriangle = (numRows) => {
   }
   return rows;
 }
+
+// decrease the complexity of the above solution
+const anotherPascalsTriangle = (numRows) => {
+  const rows = [];
+  for (let i = 0; i < numRows; i++) {
+    const row = [];
+    for (let j = 0; j <= i; j++) {
+      row.push((j === 0 || j === i) ? 1 : rows[i - 1][j - 1] + rows[i - 1][j]);
+    }
+    rows.push(row);
+  }
+  return rows;
+}
