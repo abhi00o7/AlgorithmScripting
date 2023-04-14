@@ -54,3 +54,6 @@ const anotherPascalsTriangle = (numRows) => {
   }
   return rows;
 }
+
+
+console.log(pascalsTriangle(20))
