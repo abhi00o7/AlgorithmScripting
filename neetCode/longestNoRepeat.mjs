@@ -16,3 +16,6 @@ const longestNoRepeat = (str) => {
 
 console.log(longestNoRepeat('abcabcbb')); // 3
 console.log(longestNoRepeat('bbbbb')); // 1
+
+// reges to match only negative numbers
+// ^-?[0-9]+(\.[0-9]+)?$
