@@ -29,4 +29,4 @@ function kthLargestSort(arr, k) {
 
 // examples 
 console.log(kthLargestHeap([7, 10, 4, 3, 20, 15], 3)); // 15
-console.log(kthSmallestSort([7, 10, 4, 3, 20, 15], 3)); // 7
+console.log(kthLargestSort([7, 10, 4, 3, 20, 15], 3)); // 7
