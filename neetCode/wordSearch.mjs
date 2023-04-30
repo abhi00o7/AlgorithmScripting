@@ -72,3 +72,4 @@ function dfs(board, i, j, word, index) {
 const board = [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]];
 
 console.log(wordSearch(board, "ABCCED")); // true
+console.log(wordSearch(board, "SRK")); // false
