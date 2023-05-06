@@ -33,3 +33,15 @@ const beeramid = (bonus, price) => {
 };
 
 console.log(beeramid(1500, 2));
+
+// solution 2
+
+const beeramid2 = (bonus, price) => {
+  let beers = Math.floor(bonus / price);
+  let levels = 0;
+  while (beers >= 0) {
+    levels++;
+    beers -= levels ** 2;
+  }
+  return levels - 1;
+}
