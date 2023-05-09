@@ -25,7 +25,6 @@ const merge = (leftArr, rightArr) => {
   }
 };
 
-
 // examples
 
 console.log(mergeSort([1, 5, 2, 4, 3, 6, 7, 8, 9, 10]))
