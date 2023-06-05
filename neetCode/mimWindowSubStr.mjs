@@ -53,3 +53,5 @@ function minWindow(s, t) {
 
 // example 1
 console.log(minWindow("ADOBECODEBANC", "ABC")); // "BANC"
+// example 2
+console.log(minWindow("a", "a")); // "a"
