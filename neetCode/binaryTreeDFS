@@ -1,7 +1,30 @@
-// Binary search tree DFS
+// DFS traversal of tree
 
 // Given a binary tree, return the preorder traversal of its nodes' values.
 
 // Example:
 
 // Input: [1,null,2,3]
+
+/**
+ * Given an array of integers nums which is sorted in ascending order,
+ * and an integer target, write a function to search target in nums.
+ * If target exists, then return its index. Otherwise, return -1.
+
+ * You must write an algorithm with O(log n) runtime complexity.
+ */
+
+// solution
+
+function searchBinaryTree(root, target) {
+    if (!root) return false;
+    if (root.val === target) return true;
+    return searchBinaryTree(root.left, target) || searchBinaryTree(root.right, target);
+}
+
+// Path: neetCode\binaryTreeDFS
+// DFS traversal of tree
+
+// example
+
+console.log(searchBinaryTree([1, null, 2, 3], 2)); // true
