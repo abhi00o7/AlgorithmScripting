@@ -1,0 +1,2 @@
+// n queens problem statement
+
