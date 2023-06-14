@@ -17,5 +17,18 @@ For simplicity, the first or last element could be used.
  */
 
 function quickSort(arr) {
-  
-}
+  let pivot = arr[0];
+  let left = [];
+  let right = [];
+  if (arr.length < 2) {
+    return arr;
+  }
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < pivot) {
+      left.push(arr[i])
+    } else {
+      right.push(arr[i])
+    }
+  }
+
+  }
